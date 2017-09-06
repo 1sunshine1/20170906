@@ -1,0 +1,39 @@
+#include <iostream>
+#include <queue>
+#include <string>
+using std::queue;
+using std::cin;
+using std::cout;
+using std::endl;
+using std::string;
+
+int main() {
+    queue<string> q0;
+    queue<string> q1;
+    queue<string> q2;
+    string phone_num;
+    int num;
+    for (int i = 0; i < 10; i++) {
+        cin >> num >> phone_num ;
+        if (num == 0) {
+            q0.push(phone_num);
+        } else if (num == 1) {
+            q1.push(phone_num);
+        } else {
+            q2.push(phone_num);
+        }
+    }
+    phone_num = "0";
+    for (int i = 0; i < 10; i++) {
+        q0.push(phone_num);
+        q1.push(phone_num);
+        q2.push(phone_num);
+    }
+    for (int i = 0; i < 10; i++) {
+        cout << q0.front() << " "<< q1.front() << " "<<  q2.front()  << endl;
+        q0.pop();
+        q1.pop();
+        q2.pop(); 
+    } 
+    return 0;
+}
